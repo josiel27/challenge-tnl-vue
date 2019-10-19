@@ -14,10 +14,12 @@ export default { name: "Loading" };
 <style scoped>
 .main-loading {
   height: 100vh;
-  width: 100%;
+  width: 100vw;
+  top: 0;
+  z-index: 2;
   background: #00000010;
   color: white;
-  position: absolute;
+  position: fixed;
   display: flex;
   justify-content: center;
   align-items: center;
