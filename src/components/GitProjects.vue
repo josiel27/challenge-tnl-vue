@@ -1,10 +1,11 @@
 <template>
-  <div class="main-git-projects">
-    <table v-if="projectsList != ''" class="table is-striped is-primary">
+  <div v-if="projectsList != ''" class="main-git-projects">
+    <table class="table is-striped is-primary">
       <thead>
         <th
           v-for="column in tableColumns"
           v-bind:key="column"
+          v-bind:style="filterSelect.filter === column ? styleTheadBorder : null"
           @click="() => changeFilterOrderBy(column)"
         >
           {{column === 'name' ? 'Project' : null}}
@@ -39,7 +40,10 @@ export default {
     return {
       projectsList: [],
       tableColumns: ["name", "private", "html_url", "description", "language"],
-      filterSelect: { filter: "name", order: "ASC" }
+      filterSelect: { filter: "name", order: "ASC" },
+      styleTheadBorder: {
+        borderBottom: " 2px solid #7b7b7d" //styled border bottom da thead seleciona
+      }
     };
   },
   watch: {
@@ -120,8 +124,16 @@ export default {
 <style scoped>
 .main-git-projects {
   height: 75vh;
+  width: fit-content;
+  margin: auto;
   overflow-y: scroll;
   overflow-x: hidden;
+}
+
+/* correcao scroll */
+.table {
+  margin-bottom: 100px;
+  font-size: 1rem;
 }
 
 /* Nao permite que o titulo da coluna (th) quebre de linha */

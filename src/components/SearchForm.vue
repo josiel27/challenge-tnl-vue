@@ -15,7 +15,7 @@ export default {
   name: "SearchForm",
   data: function() {
     return {
-      textUserId: "josiel27"
+      textUserId: ''
     };
   },
   methods: {
@@ -29,7 +29,16 @@ export default {
 
 <!-- Add "scoped" attribute to limit CSS to this component only -->
 <style scoped>
+  .main-search-form{
+    min-width: 70vw;
+   }
   .button{
     margin-left: 1rem;
+  }
+  /* Ajustes na responsividade para telas com menos de 800px de largura */
+  @media (max-width: 800px) {
+    .main-search-form, .button, .input{
+        font-size: 0.8rem;
+    }
   }
 </style>

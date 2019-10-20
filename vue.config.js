@@ -1,3 +1,5 @@
-module.exports = {
-    publicPath: 'challenge-tnl-vue'
-}
+//Descomente para modo production
+
+// module.exports = {
+//     publicPath: 'challenge-tnl-vue'
+// }

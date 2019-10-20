@@ -52,14 +52,17 @@ export default {
 
 <style>
 .container-div {
-  margin: 5rem;
+  width: fit-content;
+  margin: 0px 10vw auto 10vw;
+  margin-top: 3rem;
 }
 
 /* Ajustes na responsividade para telas com menos de 800px de largura */
 @media (max-width: 800px) {
   .container-div {
-    margin: 0.5rem;
-    padding: 0.25rem;
+    margin: auto;
+    margin-top: 0.5rem;
+    padding: 0.25rem; 
   }
 }
 </style>
